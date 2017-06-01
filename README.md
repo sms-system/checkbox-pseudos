@@ -1,5 +1,5 @@
 # checkbox-pseudos
-PostCSS plugin adding pseudos for customizing input checkboxes (and radiobuttons too)
+PostCSS plugin adding pseudo elements for customizing input checkboxes (and radiobuttons too)
 
 ```css
 /* before */
@@ -29,12 +29,12 @@ input[type="checkbox"]:not(checked) + label::after {
 Type: `String`  
 Default: `input-box`
 
-Pseudo class for box
+Pseudo element for box
 
 #### `MARK_PSEUDO`
 
 Type: `String`  
-Default: `input-mark`
+Default: `input-check`
 
-Pseudo class for mark
+Pseudo element for check
 
