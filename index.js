@@ -2,7 +2,7 @@ const postcss = require('postcss')
 
 module.exports = postcss.plugin('checkbox-pseudos', ({
     BOX_PSEUDO = 'input-box',
-    MARK_PSEUDO = 'input-mark'
+    MARK_PSEUDO = 'input-check'
   } = {}) => {
 
   return (root) => root.walkRules(rule => {
