@@ -38,3 +38,10 @@ Default: `input-check`
 
 Pseudo element for check
 
+#### `NEIGHBOR_SELECTOR`
+
+Type: `String`  
+Default: `label`
+
+Selector for element next to input
+
