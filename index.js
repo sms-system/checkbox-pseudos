@@ -2,7 +2,8 @@ const postcss = require('postcss')
 
 module.exports = postcss.plugin('checkbox-pseudos', ({
     BOX_PSEUDO = 'input-box',
-    MARK_PSEUDO = 'input-check'
+    MARK_PSEUDO = 'input-check',
+    NEIGHBOR_SELECTOR = 'label'
   } = {}) => {
 
   return (root) => root.walkRules(rule => {
@@ -14,8 +15,8 @@ module.exports = postcss.plugin('checkbox-pseudos', ({
     const selectors = rule.selector.split(',')
       .map(selector => selector.trim())
       .map(selector =>
-        selector.replace(RegExp('::'+BOX_PSEUDO+'$'), ':not(checked) + label::before')
-                .replace(RegExp('::'+MARK_PSEUDO+'$'), ':not(checked) + label::after')
+        selector.replace(RegExp('::'+BOX_PSEUDO+'$'), ':not(checked) + '+NEIGHBOR_SELECTOR+'::before')
+                .replace(RegExp('::'+MARK_PSEUDO+'$'), ':not(checked) + '+NEIGHBOR_SELECTOR+'::after')
       )
 
     rule.selector = selectors.join(', ')
